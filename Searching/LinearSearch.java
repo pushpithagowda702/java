@@ -13,7 +13,7 @@ class LinearSearch {
     System.out.print("Enter the element to be found: ");
     int k = sc.nextInt();
     int result = search(k, arr);
-    if(result == 0) {
+    if(result == -1) {
       System.out.println("Element not in the array");
     } else {
       System.out.println("Element found at: " + result);
@@ -26,6 +26,6 @@ class LinearSearch {
           return i;
         }
     }
-    return 0;
+    return -1;
   }
 }
