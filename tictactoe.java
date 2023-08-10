@@ -20,10 +20,13 @@ class tictactoe {
       int row = sc.nextInt();
       int col = sc.nextInt();
 
-      if(board[row][col] == ' ') {
+      if(row < 0 || row > 2 || col < 0 || col > 2) {
+        System.out.println("Invalid position");
+      } else if(board[row][col] == ' ') {
         board[row][col] = player;
         gameover = hasWon(board, player);
         if(gameover) {
+          printBoard(board);
           System.out.println("Player " + player + " won");
           return;
         } else {
@@ -32,9 +35,11 @@ class tictactoe {
       } else {
         System.out.println("Invalid move");
       }
-
-      if(!drawGame) {
+      drawGame = drawMatch(board, player);
+      if(drawGame) {
+        printBoard(board);
         System.out.println("Draw Game");
+        return;
       }
     }
   }
@@ -56,7 +61,7 @@ class tictactoe {
           return true;
         } else if(board[0][col] == player && board[1][col] == player && board[2][col] == player) {
           return true;
-        } else if(board[0][0] == player && board[1][1] == player && board[2][1] == player) {
+        } else if(board[0][0] == player && board[1][1] == player && board[2][2] == player) {
           return true;
         } else if(board[0][2] == player && board[1][1] == player && board[2][0] == player) {
           return true;
@@ -69,7 +74,7 @@ class tictactoe {
   public static boolean drawMatch(char[][] board, char player) {
     for(int row=0; row<board.length; row++) {
       for(int col=0; col<board[row].length; col++) {
-        if (board[row][col] = ' ') {
+        if (board[row][col] == ' ') {
           return false;
         }
       }
