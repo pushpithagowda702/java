@@ -3,8 +3,8 @@ import java.util.*;
 class BST {
   public static void main(String[] args) {
     Tree t = new Tree();
-    int[] nums = {10, 9, 8, 5, 7, 23, 34, 22, 42};
-    t.populate(nums);
+    int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    t.populateSorted(nums);
     t.display();
   }
 }
@@ -83,6 +83,23 @@ class Tree {
     for(int i=0; i<nums.length; i++) {
       this.insert(nums[i]);
     }
+  }
+
+  public void populateSorted(int[] nums) {
+    populateSorted(nums, 0, nums.length);
+  }
+
+  private void populateSorted(int[] nums, int start, int end) {
+    if(start >= end) {
+      return;
+    }
+
+    int mid = (start + end) / 2;
+    insert(mid);
+    populateSorted(nums, start, mid);
+    populateSorted(nums, mid + 1, end);
+
+
   }
 
   public boolean balanced() {
