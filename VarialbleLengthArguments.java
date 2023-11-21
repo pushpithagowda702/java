@@ -7,7 +7,13 @@ class VariableLengthArgument {
   }
 
   static void fun(int ...v) {
-    System.out.println(Arrays.toString(v));
+    int sum = 0;
+
+    for(int i=0; i<v.length; i++) {
+      System.out.println(v[i]);
+      sum += v[i];
+    }
+    System.out.println(sum);
   }
 
   static void fun(int a, int b) {
