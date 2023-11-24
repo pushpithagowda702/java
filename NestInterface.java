@@ -10,7 +10,7 @@ class B implements A.Nested {
   }
 }
 
-class NestedInterface {
+class NestInterface {
   public static void main(String[] args) {
     B obj = new B();
     System.out.println(obj.isOdd(5));
