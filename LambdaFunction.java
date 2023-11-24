@@ -21,5 +21,18 @@ class LambdaFunction {
     Consumer<Integer> c = (item) -> System.out.println("value: " + 2*item);
 
     a.forEach(c);
+
+    Sum s = (m, n) -> m + n;
+
+    LambdaFunction l = new LambdaFunction();
+    System.out.println(l.add(8, 6, s));
   }
+
+  private int add(int a, int b, Sum s) {
+    return s.add(a, b);
+  }
+}
+
+interface Sum {
+  int add(int a, int b);
 }
