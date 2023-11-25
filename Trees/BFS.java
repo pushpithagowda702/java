@@ -106,4 +106,21 @@ class BinaryTree {
       return l;
     }
 
+    public Node Successor(int num) {
+      Queue<Node> q = new LinkedList<>();
+      q.offer(root);
+      
+      while (!q.isEmpty()) {
+          Node nod = q.poll();
+          if(nod.left != null) q.offer(nod.left);
+          if(nod.right != null) q.offer(nod.right);
+
+          if(nod.val == num) {
+            Node n = q.poll();
+            return n;
+          }
+      }
+      return null;
+    }
+
   }
