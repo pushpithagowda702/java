@@ -1,14 +1,14 @@
 public class SumDigits {
   public static void main(String[] args) {
     
-    System.out.println(sumDigits(153, 0));
+    System.out.println(sumDigits(153));
   }
 
-  static int sumDigits(int num, int ans) {
+  static int sumDigits(int num) {
     if(num <= 0) {
-      return ans;
+      return 0;
     }
     
-    return sumDigits(num/10, ans) + num%10;
+    return sumDigits(num/10) + num%10;
   }
 }
