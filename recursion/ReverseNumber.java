@@ -1,15 +1,33 @@
 public class ReverseNumber {
+  static int sum = 0;
   public static void main(String[] args) {
-    System.out.println(reverse(154, 0));
-  }
+    
+    reverse(154);
+    System.out.println(sum);
 
-  static int reverse(int num, int rev) {
+    System.out.println(reverse(154, (int) Math.log10(154)));
+  }
+  // Method - 1
+  static void reverse(int num) {
     if(num <= 0) {
-      return rev;
+      return;
     }
 
-    rev = (rev * 10) + num % 10;
+    sum = (sum * 10) + num % 10;
+    reverse(num/10);
 
-    return reverse(num/10, rev);
+    return;
   }
+  // Method - 2
+
+  static int reverse(int n, int digits) {
+    if(n%10 == n) {
+      return n;
+    }
+
+    int sum = (n%10) * (int) Math.pow(10, digits);
+    
+    return sum+reverse(n/10, digits-1);
+  }
+
 }
