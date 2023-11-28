@@ -7,6 +7,10 @@ interface Engine {
   void stop();
 
   void accelerate();
+
+  default void me() {
+    System.out.println("Default method");
+  }
 }
 
 interface Brake {
@@ -60,5 +64,6 @@ class MultipleInheritance {
     c.play();
     c.stopMedia();
     c.stop();
+    c.me();
   }
 }
