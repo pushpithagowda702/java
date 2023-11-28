@@ -1,5 +1,3 @@
-import java.util.*;
-
 class sort{
 	public static boolean checkSort(int[] a, int ind) {
 		if (ind == a.length-1) {
@@ -8,18 +6,15 @@ class sort{
 		if (a[ind] > a[ind+1] || a[ind] == a[ind+1]) {
 			return false;
 		} else {
-			checkSort(a, ind+1);
+			return checkSort(a, ind+1);
 		}
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int size = sc.nextInt();
-		int[] a = new int[size];
-		System.out.print("Enter array elements: ");
-		for (int i=0; i<size; i++) {
-			a[i] = sc.nextInt();
-		}
-		System.out.println(checkSort(a, 0));
+		int[] array1 = {1,3,6,7,8,4,7,9};
+		int[] array2 = {1,3,4,6,7,8,9};
+		System.out.println(checkSort(array1, 0));
+		System.out.println(checkSort(array2, 0));
+
 	}
 }
