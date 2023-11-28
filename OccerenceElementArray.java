@@ -8,6 +8,7 @@ class OccurenceElementArray {
     for(int i=0; i<arr.length; i++) {
       ele = arr[i] ^ ele;
     }
+
     System.out.println("Element occuring only once is: " + ele);
   }
 }
