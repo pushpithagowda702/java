@@ -8,6 +8,8 @@ public class SkipChar {
     System.out.println(sol2);
     System.out.println(skipCharacter(0, "amateur"));
     System.out.println(skipCharacter(0, "java"));
+    skipCharacter("amateur", "");
+    skipCharacter("java", "");
   }
   // Method 1
   static void skipCharacter(int i, String s, StringBuilder ans) {
@@ -34,6 +36,21 @@ public class SkipChar {
       return skipCharacter(i+1, s);
     } else {
       return s.charAt(i) + skipCharacter(i+1, s);
+    }
+  }
+
+  // Method 3
+  static void skipCharacter(String s, String sol) {
+    if(s.isEmpty()) {
+      System.out.println(sol);
+      return;
+    }
+
+    if(s.charAt(0) == 'a') {
+      skipCharacter(s.substring(1), sol);
+    } else {
+      char ch = s.charAt(0);
+      skipCharacter(s.substring(1), sol+ch);
     }
   }
 }
