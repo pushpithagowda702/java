@@ -10,7 +10,6 @@ class VariableLengthArgument {
     int sum = 0;
 
     for(int i=0; i<v.length; i++) {
-      System.out.println(v[i]);
       sum += v[i];
     }
     System.out.println(sum);
