@@ -25,7 +25,6 @@ class HashSetExample {
 
     // Set Iteration
     Iterator it = set.iterator();
-
     while(it.hasNext()) {
       System.out.println(it.next());
     }
