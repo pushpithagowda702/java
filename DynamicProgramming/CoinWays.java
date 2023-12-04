@@ -2,8 +2,8 @@ package DynamicProgramming;
 
 public class CoinWays {
   public static void main(String[] args) {
-    int[] coins = {2,3,5,10};
-    int amt = 15;
+    int[] coins = {1,2,5};
+    int amt = 5;
 
     System.out.println(ways(coins, amt));
   }
@@ -19,7 +19,7 @@ public class CoinWays {
       if(i < coin[0] || i%coin[0] != 0) {
         sol[0][i] = 0;
       } else if(i%coin[0] == 0) {
-        sol[0][i] = i/coin[0];
+        sol[0][i] = 1;
       }
     }
 
@@ -33,6 +33,6 @@ public class CoinWays {
       }
     }
 
-    return sol[sol.length-1].length-1;
+    return sol[coin.length-1][amt];
   }
 }
