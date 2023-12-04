@@ -118,7 +118,7 @@ class LL {
 public class LinkedList {
   public static void main(String[] args) {
     LL obj = new LL();
-    obj.ins(3);
+    obj.ins(5);
     obj.ins(4);
     obj.ins(5);
     obj.ins(11);
