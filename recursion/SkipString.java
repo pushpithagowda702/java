@@ -1,6 +1,6 @@
 public class SkipString {
   public static void main(String[] args) {
-    String s = "applebananagreenapplepineappleguavacustardapple";
+    String s = "apple banana green apple pineapple guava custardapple";
     System.out.println(skip(s));
     System.out.println();
     System.out.println(skipString(s));
@@ -14,7 +14,7 @@ public class SkipString {
     if(s.length() >= 5 && s.substring(0,5).equals("apple")) {
       return skip(s.substring(1));
     } else {
-      return s.substring(0,1) + " " + skip(s.substring(1));
+      return s.substring(0,1) + "" + skip(s.substring(1));
     }
   }
 
@@ -26,7 +26,7 @@ public class SkipString {
     if(s.length() >= 5 && s.substring(0,5).equals("apple")) {
       return skipString(s.substring(5));
     } else {
-      return s.substring(0,1) + " " + skipString(s.substring(1));
+      return s.substring(0,1) + "" + skipString(s.substring(1));
     }
   }
 }
