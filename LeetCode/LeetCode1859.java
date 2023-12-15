@@ -1,17 +1,23 @@
 public class LeetCode1859 {
   class Solution {
-    public int finalValueAfterOperations(String[] operations) {
-        int x=0;
+    public String sortSentence(String s) {
         
-        for(int i=0; i<operations.length; i++) {
-            if(operations[i].equals("--X") || operations[i].equals("X--")){
-                x -= 1;
-            } else {
-                x += 1;    
-            }
-            
+        String[] res = s.split(" ");
+        int rsize = res.length;
+        String[] sol = new String[rsize];
+        
+        for(int i=0; i<rsize; i++) {
+            int siz = res[i].length()-1;
+            int num = res[i].charAt(siz) - '0';
+            sol[num-1] = res[i].substring(0, siz);
         }
-        return x;
+        
+        String sr = "";
+        
+        for(int i=0; i<rsize; i++) {
+            sr += sol[i] + " ";
+        }
+        return sr.trim();
     }
 }
 }
