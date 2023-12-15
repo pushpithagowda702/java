@@ -9,7 +9,6 @@ public class LeetCode2011 {
             } else {
                 x += 1;    
             }
-            
         }
         return x;
     }
